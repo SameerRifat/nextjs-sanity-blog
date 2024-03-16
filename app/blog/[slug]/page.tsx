@@ -4,6 +4,8 @@ import Image from 'next/image';
 import React from 'react'
 import {PortableText} from '@portabletext/react'
 
+export const revalidate = 30 // revalidate at most every 30 seconds
+
 async function getData(slug: string) {
     const query = `*[_type == 'post' && slug.current == '${slug}'] {
         title,
